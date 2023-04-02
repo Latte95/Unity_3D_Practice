@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class PropellerRotation : MonoBehaviour
 {
     public float rotationSpeed = 1000;
     float deltaTime;

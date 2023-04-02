@@ -75,9 +75,11 @@ public class Player : MonoBehaviour
         switch (collider.gameObject.tag)
         {
             case "Propeller":
-                isStopped = true;
-                //Invoke("OffStop", stoppTime);
-                StartCoroutine("OffStop2");
+                if (!isStopped)
+                {
+                    isStopped = true;
+                    StartCoroutine("OffStop2");
+                }
                 break;
         }
     }
@@ -85,11 +87,6 @@ public class Player : MonoBehaviour
     IEnumerator OffStop2()
     {
         yield return new WaitForSeconds(stoppTime);
-        OffStop();
-    }
-
-    void OffStop()
-    {
         isStopped = false;
     }
 
